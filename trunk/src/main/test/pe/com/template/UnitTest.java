@@ -9,6 +9,12 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
+/**
+ * 
+ * @author lcastro
+ *
+ */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
                 "classpath:pe/com/template/core/config/applicationContext-service.xml" })

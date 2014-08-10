@@ -9,6 +9,11 @@ import org.springframework.stereotype.Repository;
 import pe.com.template.core.dao.UserDAO;
 import pe.com.template.core.domain.User;
 
+/**
+ * 
+ * @author lcastro
+ * 
+ */
 @Repository
 public class UserDAOImpl extends BaseDAO<User> implements UserDAO {
 
@@ -32,7 +37,11 @@ public class UserDAOImpl extends BaseDAO<User> implements UserDAO {
 	@Override
 	public void saveUser(User user) throws Exception {
 		save(user);
+	}
 
+	@Override
+	public User updateUser(User user) throws Exception {
+		return update(user);
 	}
 
 }

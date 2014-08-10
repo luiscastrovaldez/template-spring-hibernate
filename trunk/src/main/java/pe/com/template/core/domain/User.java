@@ -17,19 +17,20 @@ public class User implements Serializable {
 	private Long id;
 	private String userName;
 	private String password;
-	private Timestamp creationDate;
+	private Timestamp dateCreated;
+	private Timestamp dateUpdated;
 
 	public User() {
 
 	}
 
-	public User(Long id, String userName, String password,
-			Timestamp creationDate) {
+	public User(String userName, String password, Timestamp dateCreated,
+			Timestamp dateUpdated) {
 		super();
-		this.id = id;
 		this.userName = userName;
 		this.password = password;
-		this.creationDate = creationDate;
+		this.dateCreated = dateCreated;
+		this.dateUpdated = dateUpdated;
 	}
 
 	public Long getId() {
@@ -56,12 +57,20 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public Timestamp getCreationDate() {
-		return creationDate;
+	public Timestamp getDateCreated() {
+		return dateCreated;
 	}
 
-	public void setCreationDate(Timestamp creationDate) {
-		this.creationDate = creationDate;
+	public void setDateCreated(Timestamp dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public Timestamp getDateUpdated() {
+		return dateUpdated;
+	}
+
+	public void setDateUpdated(Timestamp dateUpdated) {
+		this.dateUpdated = dateUpdated;
 	}
 
 }
