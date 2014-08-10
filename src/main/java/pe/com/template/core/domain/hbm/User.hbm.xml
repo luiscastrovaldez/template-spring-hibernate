@@ -13,8 +13,11 @@
         <property name="password" type="string">
             <column name="password" length="200" not-null="true" />
         </property>      
-        <property name="creationDate" type="java.sql.Timestamp">
-            <column name="creationDate" />
-        </property>       
+        <property name="dateCreated" type="java.sql.Timestamp">
+            <column name="dateCreated" />
+        </property>  
+         <property name="dateUpdated" type="java.sql.Timestamp">
+            <column name="dateUpdated" />
+        </property>     
     </class>
 </hibernate-mapping>

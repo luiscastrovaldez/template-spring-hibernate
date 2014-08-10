@@ -5,6 +5,11 @@ import org.springframework.stereotype.Service;
 
 import pe.com.template.core.domain.User;
 
+/**
+ * 
+ * @author lcastro
+ * 
+ */
 @Service("templateServices")
 public class TemplateServices {
 
@@ -18,6 +23,11 @@ public class TemplateServices {
 
 	public void saveUser(User user) throws Exception {
 		this.userServices.saveUser(user);
+
+	}
+
+	public void updateUser(User user) throws Exception {
+		this.userServices.updateUser(user);
 
 	}
 }

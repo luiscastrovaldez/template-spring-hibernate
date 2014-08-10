@@ -9,6 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import pe.com.template.UnitTest;
 import pe.com.template.core.domain.User;
 
+/**
+ * 
+ * @author lcastro
+ * 
+ */
 public class UserServicesTest extends UnitTest {
 
 	@Autowired
@@ -18,7 +23,8 @@ public class UserServicesTest extends UnitTest {
 	public void saveUserTest() {
 		User user = null;
 		try {
-			user = new User(null, "lcastro", "lcastro", new Timestamp(
+			user = new User("lcastro", "lcastro", new Timestamp(
+					System.currentTimeMillis()), new Timestamp(
 					System.currentTimeMillis()));
 			this.userServices.saveUser(user);
 			Assert.assertTrue(Boolean.TRUE);
@@ -34,6 +40,21 @@ public class UserServicesTest extends UnitTest {
 		try {
 			user = this.userServices.findUserByUserName("lcastro");
 			Assert.assertNotNull(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(e.getMessage());
+		}
+	}
+
+	@Test
+	public void updateUserTest() {
+		User user = null;
+		try {
+			user = this.userServices.findUserByUserName("lcastro");
+			user.setPassword("xxxxx");
+			user.setDateUpdated(new Timestamp(System.currentTimeMillis()));
+			this.userServices.updateUser(user);
+			Assert.assertTrue(Boolean.TRUE);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail(e.getMessage());
