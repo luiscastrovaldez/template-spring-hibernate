@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import pe.com.template.UnitTest;
 import pe.com.template.core.domain.User;
 
-public class TemplateServicesTest extends UnitTest{
-	
+public class TemplateServicesTest extends UnitTest {
+
 	@Autowired
 	private TemplateServices templateServices;
 
